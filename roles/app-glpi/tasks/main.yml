@@ -27,7 +27,6 @@
     name: glpi
     chart_ref: "{{ role_path }}/files/repos/glpi-latest/helm/glpi"
     release_namespace: "{{ glpi_namespace }}"
-    create_namespace: true
     wait: true
     wait_timeout: 10m
     values:
