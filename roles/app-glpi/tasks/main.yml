@@ -25,6 +25,8 @@
 - name: Deploy glpi
   kubernetes.core.helm:
     name: glpi
+    release_namespace: "glpi"
+    create_namespace: true
     chart_ref: "{{ role_path }}/files/repos/glpi-latest/helm/glpi"
     release_namespace: "{{ glpi_namespace }}"
     wait: true
@@ -34,3 +36,32 @@
       ingress:
         domain: "{{ ingress_domain }}"
         class: "{{ ingress_class }}"
+
+
+
+
+- name: Create Ingress for GLPI
+  kubernetes.core.k8s:
+    state: present
+    definition:
+      apiVersion: v1
+      kind: Ingress
+      metadata:
+        name: "glpi-ingress"
+        namespace: "{{ glpi_namespace }}"
+        annotations:
+          kubernetes.io/ingress.class: "{{ ingress_class }}"
+        labels:
+          app: glpi
+      spec:
+        rules:
+          - host: "{{ glpi_domain }}"
+            http:
+                paths:
+                  - path: /ui
+                    pathType: Prefix
+                    backend:
+                      service:
+                        name: nginx
+                        port:
+                          number: 80

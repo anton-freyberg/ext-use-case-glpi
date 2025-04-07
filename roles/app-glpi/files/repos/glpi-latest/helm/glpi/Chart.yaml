@@ -13,6 +13,6 @@
 # limitations under the License.
 
 apiVersion: v2
-description: Unguard Demo Application
-name: unguard
+description: GLPI Application
+name: glpi
 version: 0.0.1
