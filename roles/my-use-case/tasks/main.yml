@@ -5,7 +5,8 @@
 - include_role:
     name: dt-operator
   vars:
-    operator_mode: "applicationMonitoring" 
+    operator_mode: "applicationMonitoring"
+    dt_operator_release: "v1.4.0"
 
 - include_role:
     name: app-glpi
