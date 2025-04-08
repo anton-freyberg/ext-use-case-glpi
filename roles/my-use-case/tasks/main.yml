@@ -6,7 +6,8 @@
     name: dt-operator
   vars:
     operator_mode: "applicationMonitoring" 
-
+- include_role:
+    name: app-unguard
 - include_role:
     name: app-glpi
 
