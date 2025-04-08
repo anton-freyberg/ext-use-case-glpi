@@ -53,7 +53,7 @@
           app: glpi
       spec:
         rules:
-          - host: "{{ glpi_domain }}"
+          - host: "glpi.{{ ingress_domain }}"
             http:
                 paths:
                   - path: /ui
