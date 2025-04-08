@@ -25,14 +25,12 @@
 - name: Deploy glpi
   kubernetes.core.helm:
     name: glpi
-    release_namespace: "glpi"
+    release_namespace: glpi
     create_namespace: true
     chart_ref: "{{ role_path }}/files/repos/glpi-latest/helm/glpi"
-    release_namespace: "{{ glpi_namespace }}"
     wait: true
     wait_timeout: 10m
     values:
-
       ingress:
         domain: "{{ ingress_domain }}"
         class: "{{ ingress_class }}"
