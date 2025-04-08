@@ -3,10 +3,5 @@
     name: microk8s
 
 - include_role:
-    name: dt-operator
-  vars:
-    operator_mode: "applicationMonitoring" 
-
-- include_role:
     name: app-glpi
 
