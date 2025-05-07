@@ -16,6 +16,10 @@ spec:
       labels:
         app: php-fpm
     spec:
+      securityContext:
+        runAsUser: 82
+        runAsGroup: 82
+        runAsNonRoot: true
       containers:
       - image: eftechcombr/glpi:php-fpm-10.0.18
         imagePullPolicy: Always
