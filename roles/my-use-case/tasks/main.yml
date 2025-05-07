@@ -4,8 +4,7 @@
 
 - include_role:
     name: dt-operator
-  vars:
-    dt_operator_release: "1.4.0"
+
 - include_role:
     name: app-glpi
 
