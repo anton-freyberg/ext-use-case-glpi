@@ -1,6 +1,6 @@
 ---
 - include_role:
-    name: k3
+    name: k3s
 
 - include_role:
     name: dt-operator

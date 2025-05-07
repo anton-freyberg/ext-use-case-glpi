@@ -69,6 +69,9 @@ RUN chmod +x /usr/local/bin/glpi-*.sh \
 
 RUN rm -rf /var/www/html/install/install.php
 
+RUN chown -R www-data:www-data /var/lib/glpi \
+  && chmod -R 755 /var/www/html/files
+
 EXPOSE 9000/tcp 
 
 CMD ["php-fpm"]
