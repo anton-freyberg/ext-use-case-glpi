@@ -56,7 +56,7 @@
           - host: "glpi.{{ ingress_domain }}"
             http:
                 paths:
-                  - path: /ui
+                  - path: /
                     pathType: Prefix
                     backend:
                       service:
